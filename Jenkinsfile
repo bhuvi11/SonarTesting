@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages{
   stage('SonarQube analysis') {
-    step}
+    steps {
     script{
    
       sh """./gradlew sonarqube """
