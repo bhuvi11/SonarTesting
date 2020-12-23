@@ -5,7 +5,7 @@ pipeline {
     steps {
     script{
    
-      sh """./gradlew sonarqube """
+      bat " sh ./gradlew sonarqube "
     }
   }
   }
