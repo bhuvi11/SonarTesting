@@ -1,8 +1,8 @@
-node {
+pipeline {
   
   stage('SonarQube analysis') {
    
-      sh './gradlew sonarqube'
+      sh """./gradlew sonarqube """
     
   }
 }
