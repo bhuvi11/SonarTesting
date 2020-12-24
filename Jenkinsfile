@@ -1,15 +1,12 @@
 pipeline {
-    agent none
-   stages {     
-    stage('sonar Install') {
-      agent {         
-       docker {          
-         image 'sonarqube'         
-     }       
-  }       
-  steps {
-       sh './gradlew sonarqube'
-       }
-     }
-   }
- }
+    agent {
+        docker { image 'sonar' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh './gradlew sonar'
+            }
+        }
+    }
+}
