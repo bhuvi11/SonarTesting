@@ -1,13 +1,15 @@
 pipeline {
-  agent any
-  stages{
-  stage('SonarQube analysis') {
-    steps {
-    script{
-   
-      bat " sh ./gradlew sonarqube "
-    }
-  }
-  }
-  }
-}
+    agent none
+   stages {     
+    stage('sonar Install') {
+      agent {         
+       docker {          
+         image 'sonarqube'         
+     }       
+  }       
+  steps {
+       sh './gradlew sonarqube'
+       }
+     }
+   }
+ }
