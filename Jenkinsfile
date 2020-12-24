@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'sonar' }
+        docker { image 'sonarqube' }
     }
     stages {
         stage('Test') {
