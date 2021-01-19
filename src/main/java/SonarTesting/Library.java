@@ -13,9 +13,6 @@ public class Library {
         System.out.println(a+b );
     }
     public int sum(int a,int b){
-        if(a>=b)
-        {
-        
-        }
+       return a+b;
     }
 }
