@@ -12,6 +12,11 @@ public class Library {
       
         System.out.println(a+b );
     }
+    public static int max(int a, int b, int c) {
+    		int ret = Math.max(a, b);
+    		return ret = Math.max(ret, c);  // Redundant assignment
+    	}
+    
     public int sum(int a,int b){
        return a+b;
     }
