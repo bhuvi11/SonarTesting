@@ -41,7 +41,7 @@ jobs:
     - run: ls $GITHUB_WORKSPACE/output
     - run: ls $GITHUB_WORKSPACE/reports
     - run: ls $GITHUB_WORKSPACE
-    - run: cat $GITHUB_WORKSPACE/output/scan-full-report.json
+    - run: cat $GITHUB_WORKSPACE/output/reports/scan-full-report.json
     - name: Upload report
       uses: github/codeql-action/upload-sarif@v1
       with:
