@@ -10,9 +10,9 @@ name: Snyk Scan through API call
 on:
   push:
     branches: [ main ]
-  pull_request:
+  #pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ main ]
+   # branches: [ main ]
   workflow_dispatch:
     branches: [ main ]
   #schedule:
