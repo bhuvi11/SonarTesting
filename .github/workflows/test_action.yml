@@ -7,14 +7,8 @@
 
 name: Snyk Scan through API call
 
-on:
-  push:
-    branches: [ main ]
-  #pull_request:
-    # The branches below must be a subset of the branches above
-   # branches: [ main ]
-  workflow_dispatch:
-    branches: [ main ]
+on: workflow_dispatch
+   
   #schedule:
    # - cron: '27 12 * * 4'
 
@@ -27,7 +21,7 @@ jobs:
         # Snyk can be used to break the build when it detects security issues.
         # In this case we want to upload the issues to GitHub Code Scanning
         continue-on-error: true
-        uses: snyk/actions/maven@master
+        uses: snyk/actions/gradle@master
         env:
           # In order to use the Snyk Action you will need to have a Snyk API token.
           # More details in https://github.com/snyk/actions#getting-your-snyk-token
@@ -35,7 +29,4 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           command: monitor
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: snyk.sarif
+      
